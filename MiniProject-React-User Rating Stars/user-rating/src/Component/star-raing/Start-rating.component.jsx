@@ -17,6 +17,9 @@ export default function StarRating({ noOfStars = 5 }) {
     function handleMouseleave() {
         setHover(rating);
     }
+    function handleReset() {
+        setRating(0);
+    }
     return (<div className='star-rating'>
         {
             [...Array(noOfStars)].map((_, index) => {
@@ -34,6 +37,7 @@ export default function StarRating({ noOfStars = 5 }) {
 
             })
         }
+        <button onClick={handleReset()}>RESET</button>
         <p>You Have Given Rating of {rating} stars.</p>
     </div>
     )
